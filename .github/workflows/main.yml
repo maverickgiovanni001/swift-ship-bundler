@@ -32,13 +32,33 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Find build output
+        run: |
+          echo "Files in project root:"
+          ls -la
+          echo "Possible output folders:"
+          find . -maxdepth 2 -type d | sort
+
+      - name: Determine output folder
+        run: |
+          if [ -d "dist" ]; then
+            echo "OUTPUT_DIR=dist" >> $GITHUB_ENV
+          elif [ -d "build" ]; then
+            echo "OUTPUT_DIR=build" >> $GITHUB_ENV
+          elif [ -d "out" ]; then
+            echo "OUTPUT_DIR=out" >> $GITHUB_ENV
+          else
+            echo "No known build output folder found"
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./${{ env.OUTPUT_DIR }}
 
   deploy:
     needs: build
