@@ -32,6 +32,15 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Check output folders
+        run: |
+          echo "Project root:"
+          pwd
+          echo "Top-level files:"
+          ls -la
+          echo "Searching for common output folders:"
+          find . -maxdepth 3 -type d \( -name dist -o -name build -o -name out \) | sort
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
