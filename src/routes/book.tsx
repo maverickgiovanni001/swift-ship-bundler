@@ -62,7 +62,7 @@ function BookPage() {
             <p className="mt-4 font-mono text-2xl font-bold text-[color:var(--gold-deep)]">{waybill}</p>
             <p className="mt-6 text-sm text-muted-foreground">Save this reference. A confirmation email has been sent to {form.sEmail || "your inbox"}.</p>
             <div className="mt-8 flex justify-center gap-3">
-              <a href={`./track?c=${waybill}`} className="rounded-full bg-[color:var(--ink)] px-6 py-3 text-sm font-semibold text-white">Track this shipment</a>
+              <a href={`/track?c=${waybill}`} className="rounded-full bg-[color:var(--ink)] px-6 py-3 text-sm font-semibold text-white">Track this shipment</a>
               <button onClick={() => { setWaybill(null); setStep(0); setForm(empty); }} className="rounded-full border border-black/15 px-6 py-3 text-sm font-semibold">Book another</button>
             </div>
           </div>

@@ -16,12 +16,12 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   const { t } = useI18n();
   const items = [
-    { key: "air", icon: Plane, img: "./images/air-freight.jpg" },
-    { key: "sea", icon: Ship, img: "./images/sea-freight.jpg" },
-    { key: "road", icon: Truck, img: "./images/road-freight.jpg" },
-    { key: "express", icon: Zap, img: "./images/courier.jpg" },
-    { key: "warehouse", icon: Warehouse, img: "./images/warehouse.jpg" },
-    { key: "customs", icon: FileCheck2, img: "./images/containers.jpg" },
+    { key: "air", icon: Plane, img: "/images/air-freight.jpg" },
+    { key: "sea", icon: Ship, img: "/images/sea-freight.jpg" },
+    { key: "road", icon: Truck, img: "/images/road-freight.jpg" },
+    { key: "express", icon: Zap, img: "/images/courier.jpg" },
+    { key: "warehouse", icon: Warehouse, img: "/images/warehouse.jpg" },
+    { key: "customs", icon: FileCheck2, img: "/images/containers.jpg" },
   ] as const;
 
   return (

@@ -15,7 +15,7 @@ function AboutPage() {
   return (
     <Layout>
       <section className="ink-panel relative overflow-hidden">
-        <img src="./images/hq.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-30" loading="lazy" />
+        <img src="/images/hq.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-30" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--ink)] to-transparent" />
         <div className="container-page relative py-24">
           <p className="text-xs font-semibold uppercase tracking-widest text-[color:var(--gold)]">About</p>

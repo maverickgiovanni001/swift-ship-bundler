@@ -32,7 +32,7 @@ function Home() {
     return (
       <section className="relative overflow-hidden ink-panel">
         <div className="absolute inset-0">
-          <img src="./images/hero-plane.jpg" alt="Cargo aircraft above clouds at golden hour" className="h-full w-full object-cover opacity-45" width={1920} height={1280} />
+          <img src="/images/hero-plane.jpg" alt="Cargo aircraft above clouds at golden hour" className="h-full w-full object-cover opacity-45" width={1920} height={1280} />
           <div className="absolute inset-0 bg-gradient-to-tr from-[color:var(--ink)] via-[color:var(--ink)]/70 to-transparent" />
         </div>
 
@@ -105,12 +105,12 @@ function Home() {
 
   function ServicesShowcase() {
     const svc = [
-      { icon: Plane,     img: "./images/air-freight.jpg",  key: "air"       },
-      { icon: Ship,      img: "./images/sea-freight.jpg",  key: "sea"       },
-      { icon: Truck,     img: "./images/road-freight.jpg", key: "road"      },
-      { icon: Zap,       img: "./images/courier.jpg",      key: "express"   },
-      { icon: Warehouse, img: "./images/warehouse.jpg",    key: "warehouse" },
-      { icon: FileCheck2,img: "./images/containers.jpg",   key: "customs"   },
+      { icon: Plane,     img: "/images/air-freight.jpg",  key: "air"       },
+      { icon: Ship,      img: "/images/sea-freight.jpg",  key: "sea"       },
+      { icon: Truck,     img: "/images/road-freight.jpg", key: "road"      },
+      { icon: Zap,       img: "/images/courier.jpg",      key: "express"   },
+      { icon: Warehouse, img: "/images/warehouse.jpg",    key: "warehouse" },
+      { icon: FileCheck2,img: "/images/containers.jpg",   key: "customs"   },
     ] as const;
     return (
       <section className="container-page py-20">
@@ -147,7 +147,7 @@ function Home() {
   function NetworkBand() {
     return (
       <section className="relative overflow-hidden ink-panel">
-        <img src="./images/network.jpg" alt="Global logistics network arcs over an illuminated globe" className="absolute inset-0 h-full w-full object-cover opacity-40" loading="lazy" width={1600} height={900} />
+        <img src="/images/network.jpg" alt="Global logistics network arcs over an illuminated globe" className="absolute inset-0 h-full w-full object-cover opacity-40" loading="lazy" width={1600} height={900} />
         <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--ink)] via-[color:var(--ink)]/60 to-transparent" />
         <div className="container-page relative py-24 md:py-32 grid gap-10 md:grid-cols-2 items-center">
           <div>
@@ -210,7 +210,7 @@ function Home() {
       <section className="container-page pb-24">
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="relative overflow-hidden rounded-3xl lg:col-span-2 aspect-[16/10]">
-            <img src="./images/control-room.jpg" alt="Global operations control room with world route map" className="h-full w-full object-cover" loading="lazy" width={1600} height={1000} />
+            <img src="/images/control-room.jpg" alt="Global operations control room with world route map" className="h-full w-full object-cover" loading="lazy" width={1600} height={1000} />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-8 text-white">
               <p className="text-xs font-semibold uppercase tracking-widest text-[color:var(--gold)]">Control Tower</p>
               <h3 className="mt-1 font-display text-2xl font-bold md:text-3xl">Every parcel, in view.</h3>
@@ -218,7 +218,7 @@ function Home() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-3xl aspect-[3/4] lg:aspect-auto">
-            <img src="./images/containers.jpg" alt="Yellow shipping containers stacked at port" className="h-full w-full object-cover" loading="lazy" width={1280} height={1600} />
+            <img src="/images/containers.jpg" alt="Yellow shipping containers stacked at port" className="h-full w-full object-cover" loading="lazy" width={1280} height={1600} />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-8 text-white">
               <p className="text-xs font-semibold uppercase tracking-widest text-[color:var(--gold)]">Fleet</p>
               <h3 className="mt-1 font-display text-2xl font-bold">9,412 vehicles. 74 aircraft.</h3>
