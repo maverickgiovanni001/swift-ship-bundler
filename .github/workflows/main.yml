@@ -35,7 +35,9 @@ jobs:
       - name: Detect output directory
         id: detect
         run: |
-          if [ -d "dist" ]; then
+          if [ -d ".output/public" ]; then
+            echo "dir=.output/public" >> $GITHUB_OUTPUT
+          elif [ -d "dist" ]; then
             echo "dir=dist" >> $GITHUB_OUTPUT
           elif [ -d "build" ]; then
             echo "dir=build" >> $GITHUB_OUTPUT
