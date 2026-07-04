@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { Menu, X, Globe } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
@@ -21,7 +22,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-black/5 bg-background/85 backdrop-blur-xl">
       <div className="container-page flex h-16 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src="/images/logo-mark.png" alt="" className="h-8 w-8" width={32} height={32} />
+          <img src={asset("/images/logo-mark.png")} alt="" className="h-8 w-8" width={32} height={32} />
           <span className="font-display text-lg font-bold tracking-tight">
             InterGlobe<span className="text-[color:var(--gold-deep)]">.cloud</span>
           </span>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { asset } from "@/lib/asset";
 
 const KEY = "ig_voice_played_v1";
 
@@ -15,7 +16,7 @@ export function Voiceover() {
     try { played = localStorage.getItem(KEY) === "1"; } catch {}
     if (played) return;
     setVisible(true);
-    const audio = new Audio("/audio/intro.mp3");
+    const audio = new Audio(asset("/audio/intro.mp3"));
     audio.volume = 0.55;
     audioRef.current = audio;
 

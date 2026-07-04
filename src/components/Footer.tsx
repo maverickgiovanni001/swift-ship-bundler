@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
+import { asset } from "@/lib/asset";
 
 export function Footer() {
   const { t } = useI18n();
@@ -8,7 +9,7 @@ export function Footer() {
       <div className="container-page py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <img src="/images/logo-mark.png" alt="" className="h-9 w-9" width={36} height={36} />
+            <img src={asset("/images/logo-mark.png")} alt="" className="h-9 w-9" width={36} height={36} />
             <span className="font-display text-xl font-bold">InterGlobe.cloud</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-white/70">{t("footer.tag")}</p>
