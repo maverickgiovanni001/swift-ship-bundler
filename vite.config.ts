@@ -5,6 +5,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    base: "./",
+    base: "/swift-ship-bundler/",
   },
 });
