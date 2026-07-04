@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
+import { imgPath } from "@/lib/utils";
 import { Plane, Ship, Truck, Zap, Warehouse, FileCheck2, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
@@ -16,12 +17,12 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   const { t } = useI18n();
   const items = [
-    { key: "air", icon: Plane, img: "/images/air-freight.jpg" },
-    { key: "sea", icon: Ship, img: "/images/sea-freight.jpg" },
-    { key: "road", icon: Truck, img: "/images/road-freight.jpg" },
-    { key: "express", icon: Zap, img: "/images/courier.jpg" },
-    { key: "warehouse", icon: Warehouse, img: "/images/warehouse.jpg" },
-    { key: "customs", icon: FileCheck2, img: "/images/containers.jpg" },
+    { key: "air", icon: Plane, img: imgPath("/images/air-freight.jpg") },
+    { key: "sea", icon: Ship, img: imgPath("/images/sea-freight.jpg") },
+    { key: "road", icon: Truck, img: imgPath("/images/road-freight.jpg") },
+    { key: "express", icon: Zap, img: imgPath("/images/courier.jpg") },
+    { key: "warehouse", icon: Warehouse, img: imgPath("/images/warehouse.jpg") },
+    { key: "customs", icon: FileCheck2, img: imgPath("/images/containers.jpg") },
   ] as const;
 
   return (
