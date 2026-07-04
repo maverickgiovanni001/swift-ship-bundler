@@ -32,25 +32,10 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Detect output directory
-        id: detect
+      - name: Prepare Pages artifact
         run: |
-          if [ -d ".output/public" ]; then
-            echo "dir=.output/public" >> $GITHUB_OUTPUT
-          elif [ -d "dist" ]; then
-            echo "dir=dist" >> $GITHUB_OUTPUT
-          elif [ -d "build" ]; then
-            echo "dir=build" >> $GITHUB_OUTPUT
-          elif [ -d "out" ]; then
-            echo "dir=out" >> $GITHUB_OUTPUT
-          else
-            echo "No build output directory found"
-            echo "Top-level files:"
-            ls -la
-            echo "Searching all folders:"
-            find . -maxdepth 3 -type d | sort
-            exit 1
-          fi
+          test -f dist/client/index.html
+          cp dist/client/index.html dist/client/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -58,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./${{ steps.detect.outputs.dir }}
+          path: ./dist/client
 
   deploy:
     needs: build
