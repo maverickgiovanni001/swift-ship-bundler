@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
@@ -62,7 +62,7 @@ function BookPage() {
             <p className="mt-4 font-mono text-2xl font-bold text-[color:var(--gold-deep)]">{waybill}</p>
             <p className="mt-6 text-sm text-muted-foreground">Save this reference. A confirmation email has been sent to {form.sEmail || "your inbox"}.</p>
             <div className="mt-8 flex justify-center gap-3">
-              <a href={`/track?c=${waybill}`} className="rounded-full bg-[color:var(--ink)] px-6 py-3 text-sm font-semibold text-white">Track this shipment</a>
+              <Link to="/track" search={{ c: waybill } as never} className="rounded-full bg-[color:var(--ink)] px-6 py-3 text-sm font-semibold text-white">Track this shipment</Link>
               <button onClick={() => { setWaybill(null); setStep(0); setForm(empty); }} className="rounded-full border border-black/15 px-6 py-3 text-sm font-semibold">Book another</button>
             </div>
           </div>
